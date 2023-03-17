@@ -23,9 +23,9 @@ def predict(l):
 
     # Makes prediction and gets top 5
     predictions = model.predict(reduced_array)[0]
-    top = (-pred).argsort()[:5]
+    top = (-predictions).argsort()[:5]
 
     # Gets classification for guess
-    guesses = [class_names[x] for x in ind]
+    guesses = [class_names[x] for x in top]
 
-    return gusses
+    return guesses
